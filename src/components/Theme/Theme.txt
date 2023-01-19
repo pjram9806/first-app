@@ -1,0 +1,46 @@
+        <Fragment>
+                <div className='container mt-3 '>
+                    <div className='row'>
+                        <div className='col'>
+                            <div className='card bg-primary'>
+                                <div className='card-body'> 
+                             
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </Fragment>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <Fragment>
+        <div className='container mt-3 '>
+            <div className='row'>
+                <div className='col'>
+                    <div className='card'>
+                        <div className='card-header'> 
+                         <p className='h2'>Functional Component</p>
+                        </div>
+                        <div className='card-body'>
+                         <p className='h3'>{message}</p>
+                         <button className='btn btn-sm btn-danger' onClick ={()}>Good Morning</button>
+                         <button className='btn btn-sm btn-amber' onClick={}>Good AfterNoon</button>
+                         <button className='btn btn-sm btn-info' onClick={}>Good Evening</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </Fragment>

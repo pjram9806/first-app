@@ -1,0 +1,91 @@
+React hooks
+-----------
+useState() ==> alternate of setState()
+useContext() ==> alternate of context API
+useEffect() ==> alternate of componentDidMOunt,componentWillUnmount,componentWillUpdate
+useRef()==> to refer any dom elements alternate for document.getElementById
+useReducer()==> useState() ==> for small changes used for complex state-managaement
+
+
+useState syntax
+---------------
+let [count,setCount] = useState(0)
+
+intial value of count is 0
+setCount is method for update/modify of count variable
+
+------------------------------------------------------------------------------------------------------
+useContext syntax
+-----------------
+app.js
+------
+let userInfo = 
+{
+    name:'vikram',age:28
+}
+<ComponentC/>
+send the above to componentC
+<UserContext.Provider value={userInfo}>
+    <ComponentC/>
+</UserContext.Provider>
+
+userContext.js
+--------------
+let UserContext = React.createContext({});
+export UserContext;
+
+ComponentC.js
+-------------
+let userInfo = useContext(UserContext);
+
+<pre>{JSON.stringify(userInfo)}</pre>
+------------------------------------------------------------------------------------------------------
+useEffect() syntax
+-------------------
+
+useEffect(()=>
+{
+    //componentDidMOunt(Axios) or server calls
+    return ()=>
+    {
+        //componentWillUnmount
+    }
+},[dependencies])
+
+for every useEffect there will be a return function 
+------------------------------------------------------------------------------------------------------
+useRef() alternate for dom document.getElementById
+
+let [terms,setTerms] = useState(false);
+let buttonEl = useRef(null);
+
+let acceptTerms =(event)=>
+{
+    setTerms(event.target.checked);
+}
+<form>
+
+   <div class="form-check">
+
+    <input onChange={acceptTerms}  className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
+    <label className="form-check-label" htmlfor="flexCheckDefault">& Conditions</label>
+  </div>
+
+    <div>
+      <input ref = {buttonEl} type='submit' value='submit' className='btn btn-sm btn-primary' disabled/>
+    </div>
+</form>
+------------------------------------------------------------------------------------------------------
+useReducer()
+
+reduce() this method comes from javascript array concept
+let [variable,dispatch] = useReducer(function,intialState)
+let [variable,setvariable] = useState(intialState);
+
+let reducer =(state,action)=>
+{
+    //state management
+}
+------------------------------------------------------------------------------------------------------
+
+useMemo()
